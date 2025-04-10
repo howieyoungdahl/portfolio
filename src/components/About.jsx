@@ -1,7 +1,7 @@
 // components/About.jsx
 import React, { useEffect } from 'react';
 import './About.css';
-
+import aboutImage from '../images/about.jpeg';
 const About = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -36,7 +36,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-image fade-in">
           <div className="image-frame">
-            <img src="/images/about.jpeg" alt="Howard Youngdahl" />
+            <img src={aboutImage} alt="Howard Youngdahl" />
           </div>
         </div>
         <div className="about-text">

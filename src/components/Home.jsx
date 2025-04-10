@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Home.css';
+import profileImage from '../images/profile.jpeg';
 
 const Home = () => {
   const [displayText, setDisplayText] = useState('');
@@ -122,7 +123,7 @@ const Home = () => {
         </div>
         <div className="home-image parallax" data-speed="0.5">
           <div className="image-container">
-            <img src="/images/profile.jpeg" alt="Howard Youngdahl" />
+            <img src={profileImage} alt="Howard Youngdahl" />
           </div>
         </div>
       </div>
