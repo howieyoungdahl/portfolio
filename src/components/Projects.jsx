@@ -1,6 +1,7 @@
 // components/Projects.jsx
 import React, { useEffect, useState } from 'react';
-import './Projects.css';;
+import './Projects.css';
+import ImageModal from './ImageModal';
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(0);
