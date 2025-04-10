@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+Howard Youngdahl Portfolio Website
+A modern, responsive portfolio website, showcasing my skills, projects, and experience.
+Features
+Clean, modern design with parallax scrolling background
+Fully responsive layout
+Interactive project showcase
+Skills visualization
+Contact form
+Smooth scroll navigation
+Fade-in animations on scroll
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tech Stack
 
-## Available Scripts
+React
+CSS3 (with animations and transitions)
+Responsive design
 
-In the project directory, you can run:
+Getting Started
+Prerequisites
 
-### `npm start`
+Node.js (v14.0.0 or higher)
+npm (v6.0.0 or higher)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Clone the repository
 
-### `npm test`
+bashCopygit clone https://github.com/howieyoungdahl/portfolio.git
+cd portfolio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install dependencies
 
-### `npm run build`
+bashCopynpm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the development server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bashCopynpm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open your browser and navigate to http://localhost:3000
 
-### `npm run eject`
+Project Structure
+Copysrc/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Navbar.css
+│   ├── Home.jsx
+│   ├── Home.css
+│   ├── About.jsx
+│   ├── About.css
+│   ├── Projects.jsx
+│   ├── Projects.css
+│   ├── Skills.jsx
+│   ├── Skills.css
+│   ├── Contact.jsx
+│   ├── Contact.css
+│   ├── Footer.jsx
+│   └── Footer.css
+├── App.js
+├── App.css
+└── index.js
+Customization
+Changing Colors
+The color scheme can be easily modified by changing the CSS variables in App.css:
+cssCopy:root {
+  --primary: #2a6496;
+  --secondary: #6c63ff;
+  --dark: #2a3136;
+  --light: #f5f9fc;
+  --accent: #61dafb;
+  --transition: all 0.3s ease;
+}
+Adding Projects
+To add new projects, modify the projects array in the Projects.jsx component.
+Updating Skills
+To update skills, modify the skills array in the Skills.jsx component.
+Deployment
+To build the production version of the website:
+bashCopynpm run build
+This will create a build directory with all optimized assets ready for deployment.
+Credits
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Background patterns: Subtle Patterns
+Icons: FontAwesome
+Fonts: Google Fonts (Poppins, Roboto Mono)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+License
+This project is licensed under the MIT License.

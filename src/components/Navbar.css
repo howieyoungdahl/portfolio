@@ -1,0 +1,108 @@
+/* components/Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: var(--transition);
+  }
+  
+  .navbar.sticky {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark);
+    transition: var(--transition);
+  }
+  
+  .logo:hover {
+    color: var(--secondary);
+    transform: scale(1.05);
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-links a {
+    font-size: 1rem;
+    color: var(--dark);
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition);
+  }
+  
+  .navbar-links a:hover {
+    background-color: rgba(108, 99, 255, 0.1);
+    color: var(--secondary);
+    transform: translateY(-2px);
+  }
+  
+  .mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .mobile-nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--dark);
+    transition: var(--transition);
+  }
+  
+  @media (max-width: 768px) {
+    .mobile-nav-toggle {
+      display: flex;
+    }
+    
+    .navbar-links {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+      opacity: 0;
+    }
+    
+    .navbar-links.active {
+      top: 60px;
+      opacity: 1;
+    }
+    
+    .mobile-nav-toggle.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    .mobile-nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-nav-toggle.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
