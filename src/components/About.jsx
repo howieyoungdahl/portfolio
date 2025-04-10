@@ -1,8 +1,8 @@
 // components/About.jsx
 import React, { useEffect } from 'react';
 import './About.css';
-import aboutImage from '../images/about.jpeg';
 const About = () => {
+  const imagePath = process.env.PUBLIC_URL + '/images/about.jpeg'
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -36,7 +36,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-image fade-in">
           <div className="image-frame">
-            <img src={aboutImage} alt="Howard Youngdahl" />
+            <img src={imagePath} alt="Howard Youngdahl" />
           </div>
         </div>
         <div className="about-text">
