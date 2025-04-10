@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Home.css';
-import profileImage from '../images/profile.jpeg';
 
 const Home = () => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
-  
+  const imagePath = process.env.PUBLIC_URL + '/images/profile.jpeg'
   const roles = [
     "Fullstack Developer",
     "UI Artist",
@@ -123,7 +122,7 @@ const Home = () => {
         </div>
         <div className="home-image parallax" data-speed="0.5">
           <div className="image-container">
-            <img src={profileImage} alt="Howard Youngdahl" />
+            <img src={imagePath} alt="Howard Youngdahl" />
           </div>
         </div>
       </div>
