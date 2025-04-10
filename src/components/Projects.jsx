@@ -1,7 +1,6 @@
 // components/Projects.jsx
 import React, { useEffect, useState } from 'react';
-import './Projects.css';
-import ImageModal from './ImageModal';
+import './Projects.css';;
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(0);
@@ -10,6 +9,8 @@ const Projects = () => {
     src: '',
     alt: ''
   });
+
+  const langaugeImage = process.env.PUBLIC_URL + '/images/langaugeexample.jpg'
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -112,9 +113,9 @@ const Projects = () => {
                 </div>
                 <div className="project-image">
                   <img 
-                    src={`/images/langaugeexample.jpg`} 
+                    src={langaugeImage} 
                     alt={`${project.name} screenshot`} 
-                    onClick={() => openImageModal(`/images/langaugeexample.jpg`, `${project.name} screenshot`)}
+                    onClick={() => openImageModal(langaugeImage, `${project.name} screenshot`)}
                     title="Click to enlarge"
                   />
                 </div>
