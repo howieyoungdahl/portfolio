@@ -53,7 +53,7 @@ const Projects = () => {
       technologies: ["React", "TypeScript", "Flask", "SQLite", "Python", "OpenAI API"],
       image: "langauge.jpg",
       githubLink: "https://github.com/howieyoungdahl/langauge",
-      demoLink: "#"
+      demoLink: "https://langaugew3.vercel.app/"
     },
     {
       id: 2,
