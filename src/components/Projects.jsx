@@ -113,12 +113,19 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="project-image">
-                  <img 
-                    src={project.image} 
-                    alt={`${project.name} screenshot`} 
-                    onClick={() => openImageModal(langaugeImage, `${project.name} screenshot`)}
-                    title="Click to enlarge"
-                  />
+                  {project.name === "ReuseU" ? (
+                    <div className="coming-soon-message">
+                      <h3>Coming Soon</h3>
+                      <p>Releasing May 19, 2025</p>
+                    </div>
+                  ) : (
+                    <img 
+                      src={project.image} 
+                      alt={`${project.name} screenshot`} 
+                      onClick={() => openImageModal(project.image, `${project.name} screenshot`)}
+                      title="Click to enlarge"
+                    />
+                  )}
                 </div>
               </div>
             ))}

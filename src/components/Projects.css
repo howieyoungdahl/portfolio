@@ -198,6 +198,34 @@
     backdrop-filter: blur(5px);
 }
 
+.coming-soon-message {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(108, 99, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(108, 99, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    text-align: center;
+}
+
+.coming-soon-message h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.coming-soon-message p {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
 @media (max-width: 992px) {
     .project-details {
         flex-direction: column;
