@@ -51,22 +51,22 @@ const Projects = () => {
         "Designed and developed a responsive frontend using React and TypeScript, ensuring seamless API interaction and a user-friendly interface."
       ],
       technologies: ["React", "TypeScript", "Flask", "SQLite", "Python", "OpenAI API"],
-      image: "langauge.jpg",
-      githubLink: "https://langaugew3.vercel.app/",
+      image: process.env.PUBLIC_URL + '/images/langaugeexample.jpg',
+      githubLink: "https://github.com/howieyoungdahl/LanGauge",
       demoLink: "https://langaugew3.vercel.app/"
     },
     {
       id: 2,
       name: "ReuseU",
-      description: "ReuseU, an application made for students, by students, where you can sell and trade clothes and appliances with people of the same school.",
+      description: "ReuseU, an application made for students, by students, where you can sell and trade clothes and appliances with people of the same school. (RELEASING MAY 19 2025)",
       details: [
         "Built a full-stack application for selling items using Next.js, TypeScript, and Tailwind CSS.",
         "Implemented NextAuth for authentication and user management.",
         "Designed a responsive frontend with a focus on user experience.",
       ],
       technologies: ["Next.js", "TypeScript", "Flask", "Python", "NextAuth", "Tailwind CSS"],
-      image: "cydoc.jpg",
-      githubLink: "#",
+      image: process.env.PUBLIC_URL + '/images/reuseuexample.jpg',
+      githubLink: "",
       demoLink: "#"
     }
   ];
@@ -108,13 +108,13 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="project-links">
-                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>
-                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline">Live Demo</a>
+                    {project.githubLink && <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>}
+                    {project.demoLink && <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline">Website</a>}
                   </div>
                 </div>
                 <div className="project-image">
                   <img 
-                    src={langaugeImage} 
+                    src={project.image} 
                     alt={`${project.name} screenshot`} 
                     onClick={() => openImageModal(langaugeImage, `${project.name} screenshot`)}
                     title="Click to enlarge"

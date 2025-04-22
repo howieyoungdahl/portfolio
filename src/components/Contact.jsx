@@ -1,6 +1,6 @@
-// components/Contact.jsx
-import React, { useEffect, useState } from 'react';
-import './Contact.css';
+import React, { useEffect, useState } from 'react'
+import emailjs from '@emailjs/browser'
+import './Contact.css'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,43 +8,48 @@ const Contact = () => {
     email: '',
     subject: '',
     message: ''
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  })
+  const [isSending, setIsSending] = useState(false)
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-    
-    const elements = document.querySelectorAll('.fade-in');
-    elements.forEach(el => observer.observe(el));
-    
+        if (entry.isIntersecting) entry.target.classList.add('visible')
+      })
+    })
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el))
+
+    emailjs.init('ilHxRLu57mV8qqYny')
+
     return () => {
-      elements.forEach(el => observer.unobserve(el));
-    };
-  }, []);
+      document.querySelectorAll('.fade-in').forEach(el => observer.unobserve(el))
+    }
+  }, [])
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const handleChange = e => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would normally send the data to a server
-    setFormSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    // Reset the submission message after 5 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 5000);
-  };
+  const handleSubmit = async e => {
+    e.preventDefault()
+    setIsSending(true)
+    try {
+      await emailjs.send(
+        'service_zoxhfj7',
+        'template_de3ki7l',
+        { ...formData, time: new Date().toISOString() }
+      )
+      setFormSubmitted(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      setTimeout(() => setFormSubmitted(false), 5000)
+    } catch (err) {
+      console.error('EmailJS error:', err)
+    } finally {
+      setIsSending(false)
+    }
+  }
 
   return (
     <div className="contact container">
@@ -73,57 +78,70 @@ const Contact = () => {
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
+              <input
+                type="text"
+                id="name"
+                name="name"
                 value={formData.name}
                 onChange={handleChange}
-                required 
+                required
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
+              <input
+                type="email"
+                id="email"
+                name="email"
                 value={formData.email}
                 onChange={handleChange}
-                required 
+                required
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="subject">Subject</label>
-              <input 
-                type="text" 
-                id="subject" 
-                name="subject" 
+              <input
+                type="text"
+                id="subject"
+                name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                required 
+                required
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="5" 
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
                 value={formData.message}
                 onChange={handleChange}
                 required
-              ></textarea>
+              />
             </div>
-            <button type="submit" className="btn">Send Message</button>
+
+            <button type="submit" className="btn" disabled={isSending}>
+              {isSending
+                ? <>
+                    <span className="loader" /> Sending…
+                  </>
+                : 'Send Message'}
+            </button>
+
             {formSubmitted && (
-              <div className="success-message">Your message has been sent. I'll get back to you soon!</div>
+              <div className="success-message">
+                ✅ Your message has been sent.
+              </div>
             )}
           </form>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
