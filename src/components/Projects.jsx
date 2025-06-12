@@ -58,7 +58,7 @@ const Projects = () => {
     {
       id: 2,
       name: "ReuseU",
-      description: "ReuseU, an application made for students, by students, where you can sell and trade clothes and appliances with people of the same school. (RELEASING MAY 19 2025)",
+      description: "ReuseU, an application made for students, by students, where you can sell and trade clothes and appliances with people of the same school.",
       details: [
         "Built a full-stack application for selling items using Next.js, TypeScript, and Tailwind CSS.",
         "Implemented NextAuth for authentication and user management.",
@@ -67,7 +67,7 @@ const Projects = () => {
       technologies: ["Next.js", "TypeScript", "Flask", "Python", "NextAuth", "Tailwind CSS"],
       image: process.env.PUBLIC_URL + '/images/reuseuexample.jpg',
       githubLink: "",
-      demoLink: "#"
+      demoLink: "https://reuse-u-ruddy.vercel.app/"
     }
   ];
 
@@ -113,19 +113,12 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="project-image">
-                  {project.name === "ReuseU" ? (
-                    <div className="coming-soon-message">
-                      <h3>Coming Soon</h3>
-                      <p>Releasing May 19, 2025</p>
-                    </div>
-                  ) : (
-                    <img 
-                      src={project.image} 
-                      alt={`${project.name} screenshot`} 
-                      onClick={() => openImageModal(project.image, `${project.name} screenshot`)}
-                      title="Click to enlarge"
-                    />
-                  )}
+                  <img 
+                    src={project.image} 
+                    alt={`${project.name} screenshot`} 
+                    onClick={() => openImageModal(project.image, `${project.name} screenshot`)}
+                    title="Click to enlarge"
+                  />
                 </div>
               </div>
             ))}
