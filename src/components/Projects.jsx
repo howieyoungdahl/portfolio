@@ -42,6 +42,24 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      name: "Studiously.ai",
+      description: "An AI-powered automated data management platform for business professionals, featuring sophisticated email integration and intelligent follow-up systems.",
+      details: [
+        "Built a full-stack application using TypeScript and Vite for optimal performance and type safety.",
+        "Integrated Supabase for real-time database management and authentication, enabling seamless data synchronization.",
+        "Implemented comprehensive email integration using Nylas API for automated contact management and outreach.",
+        "Developed custom SQL queries for complex data relationships and efficient database operations.",
+        "Created automated follow-up reminder systems with customizable frequency settings for enhanced user engagement.",
+        "Designed contact stage management with visual pipeline tracking for improved workflow organization.",
+        "Built consolidated outreach features allowing users to manage email campaigns and track progress in real-time."
+      ],
+      technologies: ["TypeScript", "Vite", "Supabase", "Nylas API", "SQL", "React", "Email Integration"],
+      image: process.env.PUBLIC_URL + '/images/studiously-example.jpg', // Will need to add this image
+      githubLink: "", // Add if available
+      demoLink: "https://studiously.ai"
+    },
+    {
+      id: 2,
       name: "LanGauge",
       description: "A language learning platform tailored for Japanese learners, focusing on interactive language practice that adapts to the user's proficiency level.",
       details: [
@@ -56,7 +74,7 @@ const Projects = () => {
       demoLink: "https://langaugew3.vercel.app/"
     },
     {
-      id: 2,
+      id: 3,
       name: "ReuseU",
       description: "ReuseU, an application made for students, by students, where you can sell and trade clothes and appliances with people of the same school.",
       details: [
